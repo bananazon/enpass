@@ -167,7 +167,7 @@ You need to get the value of the hex-encoded key
     * Open the database file using DB Browser for SQLite
     * You will see a `SQLCipher encryption` dialog
         * Check `SQLCipher3 Defaults`
-        * In the `Password` field, put `x'<encoded_hext_string>'`
+        * In the `Password` field, put `x'<encoded_hex_string>'`
         * Click `OK`
 * You can now query the database to look
 

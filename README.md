@@ -13,8 +13,8 @@ I wrote some Python scripts to manipulate my Enpass database, but I wanted to do
 * Copy <repo_root>/enpass.yml.SAMPLE to ~/.enpass.yml
 
 ## Installation (Homebrew)
-* `brew tap gdanko/homebrew`
-* `brew install gdanko/homebrew/enpass`
+* `brew tap bananazon/homebrew`
+* `brew install bananazon/homebrew/enpass`
 
 ## Features
 * List all entries from the database
@@ -155,9 +155,9 @@ enpass list --title %GitHub% --sensitive --table
 Enter vault password:
 title                       login                        category
 --------------------------- ---------------------------- --------
-GitHub                      gdanko@example.com           login
+GitHub                      dummy@example.com           login
 GitHub                      https://github.com           computer
-Work GitHub (gdanko-work)   https://github.workplace.com computer
+Work GitHub (dummy-work)    https://github.workplace.com computer
 ```
 
 ## Troubleshooting

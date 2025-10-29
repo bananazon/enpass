@@ -9,7 +9,7 @@ I wrote some Python scripts to manipulate my Enpass database, but I wanted to do
 
 ## Installation
 * Clone the repository and from within the repository directory
-* Type `make build`. This will create a bin directory and install the binary there. It will also create a tarball which will eventually be used for Homebrew formulae.
+* Type `make install`. This will install the binary to `~/go/bin`.
 * Copy <repo_root>/enpass.yml.SAMPLE to ~/.enpass.yml
 
 ## Installation (Homebrew)

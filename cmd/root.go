@@ -13,6 +13,7 @@ import (
 )
 
 var (
+	binaryName           string = "enpass"
 	flagCardType         string
 	flagCaseSensitive    bool
 	flagClipboardPrimary bool
@@ -36,6 +37,7 @@ var (
 	flagTrashed          bool
 	flagVaultPath        string
 	flagYaml             bool
+	logger               *logrus.Logger
 	logLevel             logrus.Level
 	logLevelStr          string
 	logLevelMap          = map[string]logrus.Level{
@@ -63,9 +65,15 @@ func Execute() error {
 }
 
 func init() {
-	GetPersistenFlags(rootCmd)
+	GetPersistentFlags(rootCmd)
 	logLevel = logLevelMap[logLevelStr]
 	logger = util.ConfigureLogger(logLevel, flagNoColor)
+
+	cobra.AddTemplateFunc("PosixUsage", func(cmd *cobra.Command) string {
+		return GenerateUsageFromFlags(cmd, binaryName, cmd.Name(), "", nil, nil)
+	})
+
+	rootCmd.SetUsageTemplate(UsageTemplate)
 
 	// Set the home directory in globals
 	err = globals.SetHomeDirectory()

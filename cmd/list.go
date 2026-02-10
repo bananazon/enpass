@@ -4,7 +4,6 @@ import (
 	"github.com/gdanko/enpass/pkg/enpass"
 	"github.com/gdanko/enpass/pkg/output"
 	"github.com/gdanko/enpass/util"
-	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )
 
@@ -17,7 +16,6 @@ var (
 		Run:          listRunCmd,
 		SilenceUsage: true,
 	}
-	logger *logrus.Logger
 )
 
 func init() {

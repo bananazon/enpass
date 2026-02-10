@@ -24,9 +24,9 @@ build: guard-ENPASS_VERSION mod-tidy clean
 	@if [ ! -d "bin" ]; then \
 		mkdir "bin"; \
 	fi
-	GOOS=${GOOS} GOARCH=${GOARCH} go build -o "bin/enpass"
-	sleep 2
-	tar -czvf "enpass_${ENPASS_VERSION}_${GOOS}_${GOARCH}.tgz" bin; \
+	CGO_CFLAGS="-Wno-return-local-addr" GOOS=${GOOS} GOARCH=${GOARCH} go build -o "bin/enpass"
+	@# sleep 2
+	@# tar -czvf "enpass_${ENPASS_VERSION}_${GOOS}_${GOARCH}.tgz" bin; \
 
 .PHONY: clean
 clean:
@@ -50,7 +50,7 @@ install:
 	@echo "Installing enpass in ${GOPATH}/bin"
 	@echo "=================================================\n"
 
-	GOOS=${GOOS} GOARCH=${GOARCH} go install
+	CGO_CFLAGS="-Wno-return-local-addr" GOOS=${GOOS} GOARCH=${GOARCH} go install
 
 #
 # General targets

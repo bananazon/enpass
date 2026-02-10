@@ -2,7 +2,7 @@ GOPATH := $(shell go env GOPATH)
 GOOS := $(shell go env GOOS)
 GOARCH := $(shell go env GOARCH)
 GOBIN := $(shell go env GOBIN)
-ENPASS_VERSION := "0.5.8"
+ENPASS_VERSION := "0.5.9"
 
 GOOS ?= $(shell uname | tr '[:upper:]' '[:lower:]')
 GOARCH ?=$(shell arch)
